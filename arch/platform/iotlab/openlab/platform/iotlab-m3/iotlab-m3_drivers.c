@@ -112,10 +112,10 @@ void tim2_isr()
     timer_handle_interrupt(TIM_2);
 }
 
-void tim3_isr()
+/*void tim3_isr()
 {
     timer_handle_interrupt(TIM_3);
-}
+}*/
 
 void tim4_isr()
 {

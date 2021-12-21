@@ -26,7 +26,8 @@ IOTLAB_DIR = $(ARCH_PATH)/platform/iotlab
 
 GCCPREFIX = arm-none-eabi
 CC        = ${GCCPREFIX}-gcc
-LD        = ${GCCPREFIX}-gcc
+CXX 	  = ${GCCPREFIX}-g++
+LD        = ${GCCPREFIX}-g++
 AS        = ${GCCPREFIX}-as
 AR        = ${GCCPREFIX}-ar
 NM        = ${GCCPREFIX}-nm
@@ -40,7 +41,7 @@ CFLAGS   += -DPLATFORM_OS=CONTIKI
 CFLAGS   += -Os
 CFLAGS   += -Wall
 ifeq ($(WERROR),1)
-  CFLAGS += -Werror
+  #CFLAGS += -Werror
 endif
 CFLAGS   += -Wimplicit -Wpointer-arith
 
@@ -73,6 +74,7 @@ LINKERSCRIPT     = $(IOTLAB_DIR)/openlab/platform/scripts/stm32f103rey6.ld
 
 #### Board-specific makefile ####
 
+OPENLAB_GIT = $(IOTLAB_DIR)/openlab/
 include $(IOTLAB_DIR)/$(BOARD)/Makefile.include
 
 #### Source files and directories ####
